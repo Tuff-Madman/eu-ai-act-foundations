@@ -24,7 +24,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.2'
           bundler-cache: true
           
       - name: Setup Pages
@@ -32,7 +32,10 @@ jobs:
         uses: actions/configure-pages@v4
         
       - name: Install dependencies
-        run: bundle install
+        run: |
+          bundle config set --local deployment 'true'
+          bundle config set --local without 'development'
+          bundle install
         
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
