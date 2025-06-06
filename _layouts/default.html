@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | EU AI Act Reference Guide</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="{{ page.title }} | EU AI Act Reference Guide">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="{{ '/' | relative_url }}" class="site-title">EU AI Act Reference Guide</a>
+      <ul class="nav-links">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/risk-categories' | relative_url }}">Risk Categories</a></li>
+        <li><a href="{{ '/compliance-basics' | relative_url }}">Compliance</a></li>
+        <li><a href="{{ '/official-docs' | relative_url }}">Official Documents</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 EU AI Act Reference Guide. This website provides informational content about the EU AI Act. The content is not legal advice.</p>
+      <p>The EU AI Act Reference Guide is an independent resource and is not affiliated with the European Commission or any EU institution.</p>
+      <p>Last updated: June 2025</p>
+    </div>
+  </footer>
+</body>
+</html>

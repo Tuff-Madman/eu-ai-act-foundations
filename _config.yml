@@ -1,0 +1,43 @@
+# EU AI Act Reference Guide - Jekyll Configuration
+
+# Site settings
+title: EU AI Act Reference Guide
+description: A comprehensive, user-friendly guide to understanding and complying with the EU Artificial Intelligence Act.
+url: "https://tuff-madman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/eu-ai-act-foundations" # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Plugin settings
+# plugins:
+#   - jekyll-seo-tag
+
+# Collections
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+
+# Custom variables
+last_updated: "June 2025"
+version: "1.0.0"

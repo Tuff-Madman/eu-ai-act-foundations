@@ -1,0 +1,526 @@
+/* EU AI Act Reference Guide - Main Stylesheet */
+
+/* Base Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --text-color: #333333;
+  
+  /* Risk category colors */
+  --prohibited-color: #e74c3c;
+  --high-risk-color: #f39c12;
+  --limited-risk-color: #3498db;
+  --minimal-risk-color: #2ecc71;
+  
+  /* Card and layout */
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-radius: 8px;
+  --section-spacing: 2rem;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: var(--section-spacing);
+}
+
+.card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Risk Category Styles */
+.risk-category-section {
+  border-left: 5px solid #e9ecef;
+  padding-left: 1.5rem;
+}
+
+.risk-category {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.risk-prohibited-tag {
+  background-color: var(--prohibited-color);
+}
+
+.risk-high-tag {
+  background-color: var(--high-risk-color);
+}
+
+.risk-limited-tag {
+  background-color: var(--limited-risk-color);
+}
+
+.risk-minimal-tag {
+  background-color: var(--minimal-risk-color);
+}
+
+/* Risk Decision Tree */
+.risk-decision-tree {
+  font-family: monospace;
+  white-space: pre;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: var(--card-radius);
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.risk-decision-tree .risk-prohibited {
+  color: var(--prohibited-color);
+  font-weight: bold;
+}
+
+.risk-decision-tree .risk-high {
+  color: var(--high-risk-color);
+  font-weight: bold;
+}
+
+.risk-decision-tree .risk-limited {
+  color: var(--limited-risk-color);
+  font-weight: bold;
+}
+
+.risk-decision-tree .risk-minimal {
+  color: var(--minimal-risk-color);
+  font-weight: bold;
+}
+
+/* Document Link Styles */
+.document-link {
+  border: 1px solid #e9ecef;
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.document-link:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.document-link strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.document-link span {
+  display: block;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.doc-metadata {
+  display: flex;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.doc-metadata span {
+  margin-right: 1rem;
+}
+
+.doc-type {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.official-doc {
+  border-left: 4px solid var(--secondary-color);
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--secondary-color);
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 4px solid var(--secondary-color);
+  border-radius: 50%;
+  top: 15px;
+  left: 12px;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.timeline-content h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+.actor-responsibilities-table td, 
+.penalties-table td {
+  vertical-align: top;
+}
+
+.actor-responsibilities-table td:first-child,
+.penalties-table td:first-child {
+  font-weight: 600;
+}
+
+.actor-responsibilities-table ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* List Styles */
+.compliance-steps {
+  counter-reset: steps;
+  list-style: none;
+  padding-left: 0;
+}
+
+.compliance-steps li {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 1.5rem;
+  counter-increment: steps;
+}
+
+.compliance-steps li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.compliance-steps li strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.compliance-steps li p {
+  margin-top: 0;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content a {
+  color: var(--light-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    margin-top: 1rem;
+  }
+  
+  .nav-links li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .timeline::after {
+    left: 15px;
+  }
+  
+  .timeline-item {
+    padding-left: 35px;
+  }
+  
+  .timeline-item::after {
+    left: 7px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 95%;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+/* Risk Categories Page Specific Styles */
+.risk-pyramid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.risk-level {
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.risk-prohibited {
+  background-color: var(--prohibited-color);
+}
+
+.risk-high {
+  background-color: var(--high-risk-color);
+}
+
+.risk-limited {
+  background-color: var(--limited-risk-color);
+}
+
+.risk-minimal {
+  background-color: var(--minimal-risk-color);
+}
+
+.prohibition-list, .high-risk-categories, .limited-risk-list, .minimal-risk-examples {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.prohibition-item, .category-item, .risk-item, .example-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.prohibition-item {
+  border-left-color: var(--prohibited-color);
+}
+
+.category-item {
+  border-left-color: var(--high-risk-color);
+}
+
+.assessment-steps {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.step {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.step h4 {
+  margin-top: 0;
+  color: var(--secondary-color);
+}
