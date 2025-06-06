@@ -29,8 +29,9 @@ exclude:
   - vendor
 
 # Plugin settings
-# plugins:
-#   - jekyll-seo-tag
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Collections
 collections:
